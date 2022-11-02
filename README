@@ -16,6 +16,12 @@ Transformer模型具有强大的上下文建模能力，因此在语音识别领
 实现，在开源中文数据集Aishell-1上的到了有效的验证结果。
    目前，我们仅仅放出了DRB方法实现的主题代码，以及两个不同数据集的训练配置参数。后续，我们将完善pipline、实验结果以及代码权益相关文件。
    
-
+DRB使用方法：
+训练：
+1、训练一个收敛的CTC/AED模型；
+2、冻结网络的encoder部分以及CTC分类器，将DRB作用于encoder输出特征，仅对decoder进行微调训练，直至模型收敛。
+推理：
+两阶段重打分的方法:在CTC/AED模型结构中有更高的精度和识别速度，因此将DRB作用于该解码方法能够实现显著的GPU/CPU解码加速.
+传统的attention自回归解码：DRB方法对encoder输出去除冗余后，在CPU设备上仅牺牲较小精度损失，即可有显著解码加速效果。
 
 wenet:【https://github.com/wenet-e2e/wenet】
