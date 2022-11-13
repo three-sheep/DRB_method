@@ -24,4 +24,5 @@ DRB使用方法：
 两阶段重打分的方法:在CTC/AED模型结构中有更高的精度和识别速度，因此将DRB作用于该解码方法能够实现显著的GPU/CPU解码加速.
 传统的attention自回归解码：DRB方法对encoder输出去除冗余后，在CPU设备上仅牺牲较小精度损失，即可有显著解码加速效果。
 
-wenet:【https://github.com/wenet-e2e/wenet】
+wenet官方地址:【https://github.com/wenet-e2e/wenet】
+本文使用的版本为此账号仓库fork的版本
